@@ -1,23 +1,23 @@
 worker_processes 2
 
-working_directory "/var/www/apps/user_events" # available in 0.94.0+
+working_directory "/var/www/apps/user_events/html" # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/var/www/apps/user_events/tmp/sockets/unicorn.sock", :backlog => 1024
+listen "/var/www/apps/user_events/html/tmp/sockets/unicorn.sock", :backlog => 1024
 # listen 8080, :tcp_nopush => true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
 # feel free to point this anywhere accessible on the filesystem
-pid "/var/www/apps/user_events/run/unicorn.pid"
+pid "/var/www/apps/user_events/html/run/unicorn.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, ome applications/frameworks log to stderr or stdout,
 # so prevent them from going to /dev/null when daemonized here:
-stderr_path "/var/www/apps/user_events/log/unicorn.stderr.log"
-stdout_path "/var/www/apps/user_events/log/unicorn.stdout.log"
+stderr_path "/var/www/apps/user_events/html/log/unicorn.stderr.log"
+stdout_path "/var/www/apps/user_events/html/log/unicorn.stdout.log"
 
 # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
 # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow

@@ -3,6 +3,7 @@ require_dependency 'application_controller'
 module FullcalendarEngine
   class EventsController < ApplicationController
 
+    include ApplicationHelper
     layout FullcalendarEngine::Configuration['layout'] || 'application'
 
     before_filter :load_event, only: [:edit, :update, :destroy, :move, :resize]
