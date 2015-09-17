@@ -22,7 +22,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn' if RUBY_PLATFORM.include?("x86_64-linux")
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -37,7 +37,6 @@ gem 'haml'
 gem 'haml-rails'
 gem 'mysql2'
 gem 'authlogic'
-gem 'coffee-script-source', '1.8.0'
-gem 'will_paginate'
+gem 'coffee-script-source', '1.8.0', platforms: [:mingw, :mswin]
 gem 'fullcalendar_engine'
 
