@@ -1,0 +1,28 @@
+= content_for(:title) { "Login" }
+
+#user_form_block  
+  = link_to(root_path) do
+    = image_tag("logo.png", id: "form_logo", width: "50%")
+  = form_for @user_session do |f|
+    - if flash[:notice]
+      %div#notice_messages
+        = flash[:notice]
+    - if @user_session.errors.any?
+      %div#error_messages
+        -# %h2 form is invalid
+        %ul
+          - for message in @user_session.errors.full_messages
+            %li= message
+  
+    %p
+      = f.label :email
+      %br/
+      = f.text_field :email
+    %p
+      = f.label :password
+      %br/
+      = f.password_field :password
+    
+    %p= f.submit(id: "button", value: "Login")
+  
+  %p{class: "login"}= "Haven\'t account yet? Please #{link_to('register', register_path)}.".html_safe

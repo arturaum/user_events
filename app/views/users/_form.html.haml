@@ -1,0 +1,36 @@
+-# coding: UTF-8
+= content_for(:title) { form_title }
+
+#user_form_block
+  = link_to(root_path) do
+    = image_tag("logo.png", id: "form_logo")
+  = form_for @user do |f|
+    - if flash[:notice]
+      %div#notice_messages
+        = flash[:notice]
+    - if @user.errors.any?
+      %div#error_messages
+        %ul
+          - for message in @user.errors.full_messages
+            %li= message
+  
+    %p
+      = f.label :email
+      %br/
+      = f.text_field :email
+    %p
+      = f.label :password
+      %br/
+      = f.password_field :password
+    %p
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+
+    %p= f.submit(id: "button", value: form_title)
+  
+  %p{class: "login"}= "Have account? Please #{link_to('login', login_path)}.".html_safe

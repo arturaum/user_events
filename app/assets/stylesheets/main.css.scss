@@ -1,0 +1,37 @@
+$phi: 0.6180339887498949;
+
+$tpl-width: 960px;
+$tpl-content-width: $tpl-width * $phi;
+$tpl-sidebar-width: $tpl-width - $tpl-content-width;
+
+$default-font-size: 14px;
+$default-font-family: Century Gothic;
+$default-font-weight: normal;
+$default-color: rgba(0, 0, 0, 1);
+$default-line-height: 1.5;
+$default-webkit-font-smoothing: antialiased;
+$default-moz-osx-font-smoothing: grayscale;
+
+$a-color: #5576a9; //# 6287c2 67548a
+$highlighted-color: #7e68a8;
+
+$notice-font-color: #00B000;
+$notice-border: solid 1px #CDE2C7;
+$notice-background-color: rgb(220, 247, 212);
+
+$error-font-color: #B00000;
+$error-border: solid 1px #FFAAAA;
+$error-background-color: #FFD5D5;
+
+
+.cf:before, .cf:after { content:""; display:table; }
+.cf:after { clear:both; }
+
+b, strong, .strong { font-weight: bold; }
+i, em { font-style:italic; }
+p, ul, ol { margin-bottom: 1em; }
+ul, ol { display:block; }
+li { list-style-position: inside; }
+
+@import 'users';
+@import 'my_calendar';

@@ -1,0 +1,25 @@
+// Place all the styles related to the my_calendar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$body-background-color: #FFF;
+body { background: none repeat scroll 0% 0% $body-background-color; font-family: $default-font-family; font-size: $default-font-size; 
+  line-height: $default-line-height; -webkit-font-smoothing: $default-webkit-font-smoothing; -moz-osx-font-smoothing: $default-moz-osx-font-smoothing;
+}
+
+#warper { margin: 0 auto 100px auto; width: $tpl-width; }
+#user-panel { $content-height: 100px; width: $tpl-width; height: $content-height;
+  .logo { width: 150px; height: $content-height; float: left; display: inline-block; font-size: 0px; position: relative;
+    // &:before { content: ''; display: inline-block; height: 100%; vertical-align: middle; }
+    img { /* display: inline-block; vertical-align: middle; */ position: absolute; top: 10px; left: 0px; }
+    h1 { font-weight: bold; font-size: 16px; position: absolute; bottom: 0px; left: 0px; line-height: 1.2; color: #006D60; }
+  }
+  .events-box { height: $content-height; float: right; display: inline-block; padding: 0 1em 1em 0; 
+    &:before { content: ''; display: inline-block; height: 100%; vertical-align: bottom; }
+    p { text-align: right; display: inline-block; vertical-align: bottom; margin: 0 2em 1px 0; }
+    select { display: inline-block; vertical-align: bottom; }
+  }
+  .welcome-box { height: $content-height; float: right; display: inline-block; padding-top: 1em; 
+    p { text-align: right; }
+  }
+}
